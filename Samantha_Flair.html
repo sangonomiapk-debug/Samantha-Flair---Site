@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samantha Flair nudes</title>  <style>
+    /* ===== BASE ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #333, #1f1f1f);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      width: 100%;
+      padding: 25px 0 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .perfil {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #FFEE8C;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+      margin-bottom: 10px;
+    }
+
+    .titulo {
+      color: #FFEE8C;
+      font-size: 28px;
+      margin: 5px 0;
+      align-items: center;
+    }
+    
+    .title {
+      color: #999;
+      font-size: 15px;
+      margin: 5px 0;
+      align-items: center;
+    }
+
+    .descricao {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== GALERIA ===== */
+    .galeria {
+      width: 92%;
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      padding-bottom: 50px;
+    }
+
+    .foto {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .foto::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.4));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .foto:hover::after {
+      opacity: 1;
+    }
+
+    .foto img {
+      width: 100%;
+      display: block;
+    }
+
+    .foto:hover {
+      transform: scale(1.015);
+      box-shadow: 0 15px 45px rgba(0,0,0,0.9);
+    }
+
+    /* ===== ANIMAÇÃO ===== */
+    .hidden {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.7s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== VIEWER ===== */
+    .viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.97);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    .viewer.active {
+      display: flex;
+    }
+
+    .viewer img {
+      max-width: 95%;
+      max-height: 85%;
+      border-radius: 14px;
+      box-shadow: 0 0 50px rgba(0,0,0,0.9);
+    }
+
+    .hint {
+      color: #ccc;
+      font-size: 13px;
+      margin-top: 15px;
+      opacity: 0.7;
+    }
+
+    .contador {
+      position: fixed;
+      bottom: 15px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #FFEE8C;
+    }
+
+  </style></head><body>  <!-- HEADER -->  <div class="header">
+    
+    <img class="perfil" src="https://raw.githubusercontent.com/sangonomiapk-debug/Samatha_Flair/main/Samatha_Flair%201.jpeg">
+    
+    <div class="titulo">Samantha_Flair</div>
+    
+    
+    
+    
+    
+    <div class="descricao">ㅤ</div>
+    <div class="descricao">ㅤEste sitio es una comunidad para adultos</div>
+    <div class="descricao">ㅤque contiene material sexualmente explícito.</div>
+    <div class="descricao">ㅤ</div>
+    
+    
+    
+    
+    
+
+    <div class="title">• Role para explorar</div>
+    
+    
+    
+  </div>  <!-- GALERIA -->  <div class="galeria" id="galeria"></div>  <!-- VIEWER -->  <div class="viewer" id="viewer">
+    <img id="viewerImg">
+    <div class="hint">Toque para fechar</div>
+  </div>  <div class="contador" id="contador">31 / 100</div>  <script>
+    // ===== CONFIG =====
+    const base = "https://raw.githubusercontent.com/sangonomiapk-debug/Samatha_Flair/main/";
+    const total = 31;
+
+    // ===== ELEMENTOS =====
+    const galeria = document.getElementById("galeria");
+    const contador = document.getElementById("contador");
+    const viewer = document.getElementById("viewer");
+    const viewerImg = document.getElementById("viewerImg");
+
+    let atual = 0;
+
+    // ===== CRIAR IMAGENS =====
+    for (let i = 1; i <= total; i++) {
+      const div = document.createElement("div");
+      div.className = "foto hidden";
+
+      const img = document.createElement("img");
+      img.src = `${base}Samatha_Flair%20${i}.jpeg`;
+
+      img.onclick = () => abrirImagem(img.src, i);
+
+      div.appendChild(img);
+      galeria.appendChild(div);
+    }
+
+    // ===== ANIMAÇÃO SCROLL =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    window.onload = () => {
+      document.querySelectorAll('.hidden').forEach(f => observer.observe(f));
+    };
+
+    // ===== VIEWER =====
+    function abrirImagem(src, index) {
+      atual = index;
+      viewerImg.src = src;
+      contador.textContent = `${index} / ${total}`;
+      viewer.classList.add("active");
+    }
+
+    viewer.onclick = () => viewer.classList.remove("active");
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') viewer.classList.remove("active");
+    });
+
+  </script></body>
+</html>
